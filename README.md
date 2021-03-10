@@ -6,7 +6,6 @@ Ruby script, which loads PDF file and parses its content to a json format.
 
 ## Install dependencies
 
-```
 ```console
 gem install bundler
 bundle install
@@ -14,7 +13,6 @@ bundle install
 
 ## Run parser
 
-```
 ```console
 bundle exec ruby parser.rb
 ```
