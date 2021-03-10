@@ -21,11 +21,11 @@ bundle exec ruby parser.rb
 
 Script parses 2 PDFs and generates 2 JSON files:
 
-1. [names.json](./names.json)
+1. [names.json](./output/names.json)
 
 Contains names which are included in the calendar.
 
-* [names_extended.json](./names_extended.json)
+* [names_extended.json](./output/names_extended.json)
 
 Contains names which are included in the calendar and also all additional names which are not included in the calendar.
 
