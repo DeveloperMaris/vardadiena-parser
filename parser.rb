@@ -103,9 +103,10 @@ def parse_name_days(input_url, output_file)
     end
 
     puts "Writing to file..."
-    File.write(output_file, dates.to_json)
+    destination = "output/#{output_file}"
+    File.write(destination, dates.to_json)
 
-    puts "File created: #{output_file}"
+    puts "File created: #{destination}"
 end
 
 parse_name_days('http://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf', 'names.json')
