@@ -109,5 +109,5 @@ def parse_name_days(input_url, output_file)
     puts "File created: #{destination}"
 end
 
-parse_name_days('http://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf', 'names.json')
-parse_name_days('http://vvc.gov.lv/advantagecms/export/docs/komisijas/Paplasinatais_saraksts_2018.pdf', 'names_extended.json')
+parse_name_days('https://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf', 'names.json')
+parse_name_days('https://vvc.gov.lv/advantagecms/export/docs/komisijas/Paplasinatais_saraksts_2018.pdf', 'names_extended.json')

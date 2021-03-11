@@ -1,10 +1,20 @@
 # name-day-parser
 
-Ruby script, which loads PDF file and parses its content to a json format.
+A script that provides Latvian [name days](https://en.wikipedia.org/wiki/Name_day) in JSON file format.
+
+This Ruby script loads and reads a PDF file from provided URL, parses its content into JSON format and write it to a file.
+
+Links to source PDF files are these:
+* [https://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf](https://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf)
+* [https://vvc.gov.lv/advantagecms/export/docs/komisijas/Paplasinatais_saraksts_2018.pdf](https://vvc.gov.lv/advantagecms/export/docs/komisijas/Paplasinatais_saraksts_2018.pdf)
+
+_These files are provided and maintained by the Latvian government._
 
 # Usage
 
 ## Install dependencies
+
+To better manage the script dependencies, we are using [Bundler](https://bundler.io).
 
 ```console
 gem install bundler
@@ -13,13 +23,15 @@ bundle install
 
 ## Run parser
 
+Execute the Terminal command inside the root directory of this project:
+
 ```console
 bundle exec ruby parser.rb
 ```
 
 ## Result 
 
-Script parses 2 PDFs and generates 2 JSON files:
+Script parses 2 provided PDF files and generates 2 new JSON files inside the `output` directory:
 
 1. [names.json](./output/names.json)
 
@@ -29,7 +41,7 @@ Contains names which are included in the calendar.
 
 Contains names which are included in the calendar and also all additional names which are not included in the calendar.
 
-### File structure
+### JSON structure
 
 ```
 [
