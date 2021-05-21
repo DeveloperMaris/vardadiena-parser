@@ -31,15 +31,23 @@ bundle exec ruby parser.rb
 
 ## Result 
 
-Script parses 2 provided PDF files and generates 2 new JSON files inside the `output` directory:
+Script parses 2 provided PDF files and generates 4 new JSON files inside the `output` directory:
 
 1. [names.json](./output/names.json)
 
 Contains names which are included in the calendar.
 
-* [names_extended.json](./output/names_extended.json)
+2. [names_pretty.json](./output/names_pretty.json)
+
+Contains names which are included in the calendar in a pretty json format.
+
+3. [names_extended.json](./output/names_extended.json)
 
 Contains names which are included in the calendar and also all additional names which are not included in the calendar.
+
+4. [names_extended_pretty.json](./output/names_extended_pretty.json)
+
+Contains names which are included in the calendar and also all additional names which are not included in the calendar in a pretty json format.
 
 ### JSON structure
 
