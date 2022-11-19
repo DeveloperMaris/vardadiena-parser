@@ -1,4 +1,4 @@
-# vardadiena-parser
+# Vārdadiena Parser
 
 A script that requests and parses Latvian [name days](https://en.wikipedia.org/wiki/Name_day) into JSON file format.
 
@@ -11,9 +11,7 @@ Links to source PDF files are these:
 
 _These files are provided and maintained by the [Valsts valodas centrs](https://www.vvc.gov.lv/lv)._
 
-# Usage
-
-## Install
+## Setup
 
 To better manage the script dependencies, we are using [Bundler](https://bundler.io).
 
@@ -30,7 +28,7 @@ Execute the Terminal command inside the root directory of this project:
 bundle exec ruby parser.rb
 ```
 
-## Result 
+## Output 
 
 Script parses 2 provided PDF files and generates 4 new JSON files inside the `output` directory:
 
@@ -65,6 +63,6 @@ Contains names which are included in the calendar and also all additional names 
 ]
 ```
 
-# Licence
+## Licence
 
 `vardadiena-parser` is released under the MIT License. See [LICENSE](LICENSE) for details.
