@@ -351,6 +351,7 @@
       "Āvo",
       "Gordejs",
       "Līda",
+      "Lideja",
       "Lidita"
     ]
   },
@@ -590,6 +591,7 @@
       "Ilārs",
       "Illa",
       "Illarija",
+      "Iļža",
       "Tristans"
     ]
   },
@@ -606,6 +608,7 @@
       "Čārlijs",
       "Čārlzs",
       "Karels",
+      "Karls",
       "Karolis",
       "Karols"
     ]
@@ -671,6 +674,7 @@
       "Bonaventūra",
       "Bonaventūrs",
       "Bonoventura",
+      "Tekle",
       "Tikla",
       "Tīksma",
       "Viorika"
@@ -750,6 +754,7 @@
       "Domeniks",
       "Domija",
       "Dominika",
+      "Domnika",
       "Domuse",
       "Varenika",
       "Varonika",
@@ -782,7 +787,8 @@
     "names": [
       "Dace",
       "Dārta",
-      "Dora"
+      "Dora",
+      "Daris"
     ],
     "additional_names": [
       "Dacija",
@@ -791,12 +797,12 @@
       "Dadzis",
       "Darels",
       "Darens",
+      "Darians",
       "Darija",
       "Dārija",
       "Dārijs",
       "Darina",
       "Dario",
-      "Daris",
       "Dariuss",
       "Dariušs",
       "Darja",
@@ -848,6 +854,7 @@
       "Česlava",
       "Čezeta",
       "Dabris",
+      "Dafne",
       "Dafnis",
       "Danko"
     ]
@@ -1086,6 +1093,7 @@
       "Donāte",
       "Donāts",
       "Donna",
+      "Donots",
       "Donvina",
       "Konstancija",
       "Konstantija",
@@ -1134,7 +1142,8 @@
       "Zanita",
       "Zanna",
       "Zuzana",
-      "Zuze"
+      "Zuze",
+      "Zuzona"
     ]
   },
   {
@@ -1273,7 +1282,6 @@
       "Almārs",
       "Almīra",
       "Andārta",
-      "Annemarija",
       "Ankatrīna",
       "Anlīza",
       "Anlīze",
@@ -1323,6 +1331,7 @@
     ],
     "additional_names": [
       "Andre",
+      "Andrea",
       "Andrelita",
       "Andreta",
       "Andriana",
@@ -1356,7 +1365,8 @@
       "Justins",
       "Justīns",
       "Skaidre",
-      "Skaila"
+      "Skaila",
+      "Skaiste"
     ]
   },
   {
@@ -1476,11 +1486,11 @@
     "day": 5,
     "names": [
       "Austra",
-      "Aurora"
+      "Aurora",
+      "Aurika"
     ],
     "additional_names": [
       "Aura",
-      "Aurika",
       "Austrīte",
       "Aušra",
       "Enoks"
@@ -1719,7 +1729,8 @@
     "day": 17,
     "names": [
       "Ģertrūde",
-      "Gerda"
+      "Gerda",
+      "Gerhards"
     ],
     "additional_names": [
       "Ferdinands",
@@ -1728,7 +1739,6 @@
       "Gerarda",
       "Gerards",
       "Gerds",
-      "Gerhards",
       "Gertija",
       "Gertruda",
       "Gertrūda",
@@ -1822,6 +1832,7 @@
     ],
     "additional_names": [
       "Fraskita",
+      "Freja",
       "Frementijs",
       "Fritjofs",
       "Madaļa",
@@ -1981,7 +1992,8 @@
       "Mārita",
       "Marite",
       "Marīte",
-      "Marjeta"
+      "Marjeta",
+      "Mora"
     ]
   },
   {
@@ -2206,11 +2218,11 @@
       "Zinta",
       "Vīlips",
       "Filips",
-      "Dzinta"
+      "Dzinta",
+      "Dzintis"
     ],
     "additional_names": [
       "Dzīne",
-      "Dzintis",
       "Filipina",
       "Fīlips"
     ]
@@ -2282,7 +2294,6 @@
       "Allija",
       "Alondra",
       "Aļa",
-      "Aļesja",
       "Matrjona",
       "Matrona",
       "Valeriana",
@@ -2324,6 +2335,7 @@
       "Ērmanis",
       "Ermans",
       "Ernando",
+      "Germans",
       "Hermans",
       "Hermunds",
       "Vilmars"
@@ -2500,7 +2512,8 @@
     "day": 20,
     "names": [
       "Mirta",
-      "Ziedīte"
+      "Ziedīte",
+      "Meija"
     ],
     "additional_names": [
       "Bitīte",
@@ -2527,7 +2540,6 @@
       "Henno",
       "Hiacinta",
       "Jacinta",
-      "Meija",
       "Orhideja",
       "Orions"
     ]
@@ -2585,7 +2597,8 @@
     "names": [
       "Jurģis",
       "Juris",
-      "Georgs"
+      "Georgs",
+      "Jurgita"
     ],
     "additional_names": [
       "Džordžs",
@@ -2598,11 +2611,11 @@
       "Juranta",
       "Jureks",
       "Jureta",
-      "Jurgita",
       "Jurijs",
       "Jurika",
       "Juriks",
       "Jurita",
+      "Jurs",
       "Žoržs"
     ]
   },
@@ -2723,6 +2736,7 @@
       "Tereza",
       "Terēza",
       "Tereze",
+      "Terezeja",
       "Terezija",
       "Terēzija",
       "Termija"
@@ -2943,6 +2957,8 @@
       "Stasis",
       "Stasja",
       "Stass",
+      "Stefa",
+      "Stefaneja",
       "Stefanida",
       "Stefanīda",
       "Stefanija",
@@ -3285,6 +3301,7 @@
       "Ali",
       "Alija",
       "Džamila",
+      "Emileja",
       "Emiliana",
       "Emilija",
       "Emilijana",
@@ -3636,7 +3653,6 @@
       "Cerība",
       "Ceronis",
       "Cerons",
-      "Elfrīda",
       "Elfrīde",
       "Elfrīds",
       "Sinda",
@@ -4049,7 +4065,6 @@
       "Mimoza",
       "Molija",
       "Mollija",
-      "Mora",
       "Morēna",
       "Morgane",
       "Rasita",
@@ -4118,7 +4133,7 @@
       "Jānis"
     ],
     "additional_names": [
-
+      "Joņs"
     ]
   },
   {
@@ -4238,7 +4253,8 @@
       "Pjotrs",
       "Pola",
       "Pols",
-      "Povils"
+      "Povils",
+      "Povuls"
     ]
   },
   {
@@ -4647,6 +4663,7 @@
       "Rosita",
       "Rosvita",
       "Roza",
+      "Rozaleja",
       "Rozalija",
       "Rozalinda",
       "Rozemarija",
@@ -4737,6 +4754,7 @@
       "Marina"
     ],
     "additional_names": [
+      "Mareja",
       "Marī",
       "Mariamija",
       "Mārika",
@@ -4833,6 +4851,7 @@
       "Jakovs",
       "Jakubs",
       "Jākubs",
+      "Kaupo",
       "Žaklina",
       "Žaklīne",
       "Žaks"
@@ -5085,7 +5104,8 @@
       "Oktavija",
       "Oktāvija",
       "Onufrija",
-      "Onufrijs"
+      "Onufrijs",
+      "Onupris"
     ]
   },
   {
@@ -5226,6 +5246,7 @@
       "Genoveja",
       "Genovera",
       "Genuvefa",
+      "Geņa",
       "Gunavefa",
       "Ģenovefa",
       "Madare",
@@ -5485,6 +5506,7 @@
       "Samuels",
       "Samuēls",
       "Samvels",
+      "Zahars",
       "Zamuels",
       "Zāmuels",
       "Zāmuēls"
@@ -5626,6 +5648,7 @@
       "Bronislavs",
       "Broņa",
       "Nata",
+      "Nataleja",
       "Natalī",
       "Natalija",
       "Natalja",
@@ -5726,6 +5749,7 @@
       "Armins",
       "Armis",
       "Rubens",
+      "Rūbija",
       "Rubīna",
       "Rufina",
       "Visija",
@@ -6140,7 +6164,8 @@
     "names": [
       "Vera",
       "Vaira",
-      "Vairis"
+      "Vairis",
+      "Vaiva"
     ],
     "additional_names": [
       "Aila",
@@ -6161,7 +6186,6 @@
       "Vairīte",
       "Vaironis",
       "Vairons",
-      "Vaiva",
       "Vaivars",
       "Vēra",
       "Verena",
@@ -6245,6 +6269,7 @@
       "Marisa",
       "Mateass",
       "Matejs",
+      "Mateo",
       "Mateuss",
       "Mateušs",
       "Matiass",
@@ -6409,10 +6434,10 @@
       "Miķelis",
       "Mikus",
       "Miks",
-      "Mihails"
+      "Mihails",
+      "Jumis"
     ],
     "additional_names": [
-      "Jumis",
       "Maikls",
       "Maiks",
       "Mihaela",
@@ -6534,6 +6559,7 @@
       "Franks",
       "Fransuāza",
       "Franuse",
+      "Fraņcs",
       "Frenks",
       "Frensisa",
       "Prans",
@@ -6702,6 +6728,7 @@
       "Silvers",
       "Silveta",
       "Silvita",
+      "Siļva",
       "Zilva"
     ]
   },
@@ -6848,6 +6875,7 @@
       "Erlands",
       "Erlenda",
       "Erlens",
+      "Luka",
       "Lukass",
       "Railands",
       "Railija",
@@ -7291,7 +7319,8 @@
     "day": 7,
     "names": [
       "Helma",
-      "Lotārs"
+      "Lotārs",
+      "Pērle"
     ],
     "additional_names": [
       "Helmī",
@@ -7299,7 +7328,6 @@
       "Helmīna",
       "Helmīne",
       "Lotars",
-      "Pērle",
       "Vena",
       "Vēna",
       "Venancijs",
@@ -7446,8 +7474,10 @@
     "additional_names": [
       "Augenija",
       "Eiženijs",
+      "Eugene",
       "Eugenijs",
       "Eugēnijs",
+      "Eugeņs",
       "Euģenijs",
       "Euģēnijs",
       "Evgenijs",
@@ -7542,6 +7572,7 @@
     "additional_names": [
       "Higo",
       "Igo",
+      "Ugne",
       "Ugo"
     ]
   },
@@ -7866,6 +7897,7 @@
       "Andriāns",
       "Andrijans",
       "Andrijs",
+      "Andrivs",
       "Androns",
       "Andrs",
       "Andruss",
@@ -7924,11 +7956,11 @@
     "names": [
       "Evija",
       "Raita",
-      "Jogita"
+      "Jogita",
+      "Ako"
     ],
     "additional_names": [
       "Akims",
-      "Ako",
       "Džovita",
       "Ēvija",
       "Evijs",
@@ -8115,6 +8147,7 @@
       "Valdonis",
       "Valdons",
       "Valds",
+      "Vaļds",
       "Vivaldis",
       "Voldemars",
       "Voldis",
@@ -8155,6 +8188,7 @@
       "Veldze"
     ],
     "additional_names": [
+      "Luceja",
       "Lucianna",
       "Lucians",
       "Luciāns",
