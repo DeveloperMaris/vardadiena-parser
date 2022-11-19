@@ -1,18 +1,19 @@
-# name-day-parser
+# vardadiena-parser
 
-A script that provides Latvian [name days](https://en.wikipedia.org/wiki/Name_day) in JSON file format.
+A script that requests and parses Latvian [name days](https://en.wikipedia.org/wiki/Name_day) into JSON file format.
 
 This Ruby script loads and reads a PDF file from provided URL, parses its content into JSON format and write it to a file.
 
 Links to source PDF files are these:
-* [https://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf](https://vvc.gov.lv/advantagecms/export/docs/komisijas/Vardadienu_saraksts_2018.pdf)
-* [https://vvc.gov.lv/advantagecms/export/docs/komisijas/Paplasinatais_saraksts_2018.pdf](https://vvc.gov.lv/advantagecms/export/docs/komisijas/Paplasinatais_saraksts_2018.pdf)
+* [Kalendārvārdu ekspertu komisija](https://www.vvc.gov.lv/lv/kalendarvardu-ekspertu-komisija)
+* [Latviešu tradicionālo vārdadienu saraksts](https://www.vvc.gov.lv/lv/media/157/download?attachment)
+* [Paplašinātais vārdadienu saraksts](https://www.vvc.gov.lv/lv/media/156/download?attachment)
 
-_These files are provided and maintained by the Latvian government._
+_These files are provided and maintained by the [Valsts valodas centrs](https://www.vvc.gov.lv/lv)._
 
 # Usage
 
-## Install dependencies
+## Install
 
 To better manage the script dependencies, we are using [Bundler](https://bundler.io).
 
@@ -21,7 +22,7 @@ gem install bundler
 bundle install
 ```
 
-## Run parser
+## Run
 
 Execute the Terminal command inside the root directory of this project:
 
@@ -66,4 +67,4 @@ Contains names which are included in the calendar and also all additional names 
 
 # Licence
 
-`name-day-parser` is released under the MIT License. See [LICENSE](LICENSE) for details.
+`vardadiena-parser` is released under the MIT License. See [LICENSE](LICENSE) for details.
