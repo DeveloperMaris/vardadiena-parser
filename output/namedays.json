@@ -1198,7 +1198,6 @@
     ],
     "additional_names": [
       "Adreans",
-      "Adria",
       "Adriana",
       "Adrianna",
       "Adriāns",
@@ -1372,12 +1371,8 @@
   {
     "month": 2,
     "day": 29,
-    "names": [
-
-    ],
-    "additional_names": [
-
-    ]
+    "names": [],
+    "additional_names": []
   },
   {
     "month": 3,
@@ -1466,7 +1461,6 @@
       "Endijs",
       "Endo",
       "Ene",
-      "Enia",
       "Enīda",
       "Enijs",
       "Enika",
@@ -3291,8 +3285,14 @@
     "month": 5,
     "day": 22,
     "names": [
-      "Emīlija",
-      "Visu neparasto un kalendāros neierakstīto vārdu diena"
+      "Emīlija.",
+      "Visu",
+      "neparasto",
+      "un",
+      "kalendāros",
+      "neierakstīto",
+      "vārdu",
+      "diena"
     ],
     "additional_names": [
       "Ahmads",
@@ -4493,7 +4493,6 @@
       "Olijs",
       "Oliva",
       "Olīva",
-      "Olivia",
       "Olivija",
       "Olvija",
       "Olvita",
@@ -5056,7 +5055,6 @@
       "Stefans"
     ],
     "additional_names": [
-      "Elia",
       "Eliana",
       "Eliass",
       "Eliašs",
@@ -7147,7 +7145,6 @@
       "Adīne",
       "Eila",
       "Nadežda",
-      "Nadia",
       "Nadija",
       "Nadina",
       "Nadīne",
