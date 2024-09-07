@@ -9,8 +9,8 @@ This Python script:
 
 Source files can be found here:
 * [Kalendārvārdu ekspertu komisija](https://www.vvc.gov.lv/lv/kalendarvardu-ekspertu-komisija)
-** [Latviešu tradicionālo vārdadienu saraksts](https://www.vvc.gov.lv/lv/media/157/download?attachment)
-** [Paplašinātais vārdadienu saraksts](https://www.vvc.gov.lv/lv/media/156/download?attachment)
+* [Latviešu tradicionālo vārdadienu saraksts](https://www.vvc.gov.lv/lv/media/157/download?attachment)
+* [Paplašinātais vārdadienu saraksts](https://www.vvc.gov.lv/lv/media/156/download?attachment)
 
 _These files are provided and maintained by the [Valsts valodas centrs](https://www.vvc.gov.lv/lv)._
 
