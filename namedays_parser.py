@@ -3,8 +3,19 @@ import json
 import sys
 import os
 
+def clean_names(name_list):
+    """Remove periods, em dashes, and extra whitespaces from names."""
+    cleaned_names = []
+    for name in name_list:
+        name = name.replace('.', '').replace('–', '').strip()  # Remove periods, em dashes, and trim whitespaces
+        if name:  # Only add non-empty names
+            cleaned_names.append(name)
+    return cleaned_names
+
 def parse_csv(file_path):
     parsed_data = []
+    special_case_string = "Visu neparasto un kalendāros neierakstīto vārdu diena"
+    
     with open(file_path, mode='r', encoding='utf-8') as file:
         reader = csv.reader(file, delimiter=';')
         next(reader)  # Skip header row
@@ -25,12 +36,21 @@ def parse_csv(file_path):
                 print(f"Skipping row due to invalid date format: {row}")
                 continue  # Skip rows with invalid date format
 
-            # Split names and filter out names containing the "–" symbol
-            names = [name for name in names.split() if "–" not in name]
+            # Special case for May 22
+            if day == 22 and month == 5:
+                # Remove the special string from the names
+                if special_case_string in names:
+                    names = names.replace(special_case_string, '').strip()
+                names_list = clean_names(names.split())
+                # Add the special string back to the end
+                names_list.append(special_case_string)
+            else:
+                names_list = clean_names(names.split())
+
             parsed_data.append({
                 "day": day,
                 "month": month,
-                "names": names
+                "names": names_list
             })
     
     print(f"Parsed data from {file_path}: {parsed_data}")
