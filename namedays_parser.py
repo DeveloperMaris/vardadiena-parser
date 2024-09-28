@@ -4,10 +4,10 @@ import sys
 import os
 
 def clean_names(name_list):
-    """Remove periods, em dashes, and extra whitespaces from names."""
+    """Remove periods and extra whitespaces from names but keep em dashes."""
     cleaned_names = []
     for name in name_list:
-        name = name.replace('.', '').replace('–', '').strip()  # Remove periods, em dashes, and trim whitespaces
+        name = name.replace('.', '').strip()  # Remove periods and trim whitespaces, but keep em dashes
         if name:  # Only add non-empty names
             cleaned_names.append(name)
     return cleaned_names
@@ -67,12 +67,23 @@ def combine_namedays(namedays, namedays_extended):
                 additional_names = [name for name in ext_entry['names'] if name not in day_entry['names']]
                 break
         
-        combined_data.append({
-            "month": day_entry['month'],
-            "day": day_entry['day'],
-            "names": day_entry['names'],
-            "additional_names": additional_names
-        })
+        # Convert all names to individual entries with the "is_additional_calendar_name" field
+        for name in day_entry['names']:
+            # Replace "–" with an empty string when adding to the result
+            combined_data.append({
+                "month": day_entry['month'],
+                "day": day_entry['day'],
+                "name": "" if name == "–" else name,
+                "is_additional_calendar_name": False
+            })
+        
+        for name in additional_names:
+            combined_data.append({
+                "month": day_entry['month'],
+                "day": day_entry['day'],
+                "name": "" if name == "–" else name,
+                "is_additional_calendar_name": True
+            })
     
     print(f"Combined data: {combined_data}")
     return combined_data

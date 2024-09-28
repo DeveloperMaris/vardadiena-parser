@@ -44,9 +44,8 @@ which are not included in the calendar in a pretty json format.
     {
         "month": Int,                       # Value between 1 - 12.
         "day": Int,                         # Value between 1 - 31.
-        "names": Array<String>,             # Name array. If the date has no names, it is represented as an empty array.
-        "additional_names": Array<String>   # Additional name array, which are not written in the calendar. 
-                                            # If the date has no names, it is represented as an empty array.
+        "name": String,                     # Name. If the date has no name, it is represented as an empty string.
+        "is_additional_calendar_name": Bool # Provides information if this name is an additional calendar name. 
     },
     ...
 ]
