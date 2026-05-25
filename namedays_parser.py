@@ -1,4 +1,5 @@
 import csv
+import datetime
 import json
 import sys
 import os
@@ -7,7 +8,7 @@ def clean_names(name_list):
     """Remove periods and extra whitespaces from names but keep em dashes."""
     cleaned_names = []
     for name in name_list:
-        name = name.replace('.', '').strip()  # Remove periods and trim whitespaces, but keep em dashes
+        name = name.replace('.', '').replace(',', '').strip()  # Remove periods and commas, trim whitespace, but keep em dashes
         if name:  # Only add non-empty names
             cleaned_names.append(name)
     return cleaned_names
@@ -17,7 +18,7 @@ def parse_csv(file_path):
     special_case_string = "Visu neparasto un kalendāros neierakstīto vārdu diena"
     
     with open(file_path, mode='r', encoding='utf-8') as file:
-        reader = csv.reader(file, delimiter=';')
+        reader = csv.reader(file, delimiter=',')
         next(reader)  # Skip header row
         for row in reader:
             if len(row) != 2:
@@ -67,7 +68,8 @@ def combine_namedays(namedays, namedays_extended):
                 additional_names = [name for name in ext_entry['names'] if name not in day_entry['names']]
                 break
         
-        # Convert all names to individual entries with the "is_additional_calendar_name" field
+        # Convert all names to individual entries with the "is_additional_calendar_name" field.
+        # Final ordering is applied later in merge_with_previous so removed entries also sort in.
         for name in day_entry['names']:
             # Replace "–" with an empty string when adding to the result
             combined_data.append({
@@ -76,7 +78,7 @@ def combine_namedays(namedays, namedays_extended):
                 "name": "" if name == "–" else name,
                 "is_additional_calendar_name": False
             })
-        
+
         for name in additional_names:
             combined_data.append({
                 "month": day_entry['month'],
@@ -88,24 +90,73 @@ def combine_namedays(namedays, namedays_extended):
     print(f"Combined data: {combined_data}")
     return combined_data
 
+def merge_with_previous(current, previous_path):
+    """Merge the current snapshot with the previous JSON output.
+
+    Identity is (month, day, name). Names still present in the source get
+    "removed": null. Names that existed previously but are missing from the
+    current source get "removed" set to the current UTC timestamp the first
+    time they vanish; later runs preserve that original timestamp so it
+    reflects when the name actually disappeared. If a name reappears in the
+    source, "removed" goes back to null.
+    """
+    if os.path.exists(previous_path):
+        with open(previous_path, 'r', encoding='utf-8') as f:
+            previous = json.load(f)
+    else:
+        previous = []
+
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+    current_by_key = {(r["month"], r["day"], r["name"]): r for r in current}
+    previous_by_key = {(r["month"], r["day"], r["name"]): r for r in previous}
+
+    merged = []
+    for key in current_by_key.keys() | previous_by_key.keys():
+        month, day, name = key
+        if key in current_by_key:
+            r = current_by_key[key]
+            merged.append({
+                "month": month,
+                "day": day,
+                "name": name,
+                "is_additional_calendar_name": r["is_additional_calendar_name"],
+                "removed": None,
+            })
+        else:
+            r = previous_by_key[key]
+            prev_removed = r.get("removed")
+            merged.append({
+                "month": month,
+                "day": day,
+                "name": name,
+                "is_additional_calendar_name": r["is_additional_calendar_name"],
+                "removed": prev_removed if prev_removed is not None else now_iso,
+            })
+
+    merged.sort(key=lambda r: (r["month"], r["day"], r["is_additional_calendar_name"], r["name"]))
+    return merged
+
 def main(namedays_file, namedays_extended_file):
     namedays = parse_csv(namedays_file)
     namedays_extended = parse_csv(namedays_extended_file)
-    
+
     if not namedays or not namedays_extended:
         print("Error: One of the parsed datasets is empty. Please check the input files.")
         sys.exit(1)
-    
+
     combined_data = combine_namedays(namedays, namedays_extended)
-    
+
     output_folder = "output"
     output_file = os.path.join(output_folder, "namedays.json")
-    
+
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-    
+
+    merged = merge_with_previous(combined_data, output_file)
+
     with open(output_file, 'w', encoding='utf-8') as json_file:
-        json.dump(combined_data, json_file, ensure_ascii=False, indent=2)
+        json.dump(merged, json_file, ensure_ascii=False, indent=2)
 
     print(f"Output written to {output_file}")
 
