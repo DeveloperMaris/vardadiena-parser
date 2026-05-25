@@ -90,15 +90,24 @@ def combine_namedays(namedays, namedays_extended):
     print(f"Combined data: {combined_data}")
     return combined_data
 
+def _to_unix_seconds(value):
+    """Normalize a 'removed' value read from previous output to an int Unix timestamp.
+    Accepts int/float (seconds since epoch) or an ISO 8601 string from older runs."""
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return int(value)
+    return int(datetime.datetime.fromisoformat(value).timestamp())
+
 def merge_with_previous(current, previous_path):
     """Merge the current snapshot with the previous JSON output.
 
     Identity is (month, day, name). Names still present in the source get
     "removed": null. Names that existed previously but are missing from the
-    current source get "removed" set to the current UTC timestamp the first
-    time they vanish; later runs preserve that original timestamp so it
-    reflects when the name actually disappeared. If a name reappears in the
-    source, "removed" goes back to null.
+    current source get "removed" set to the current Unix timestamp (seconds
+    since epoch) the first time they vanish; later runs preserve that
+    original timestamp so it reflects when the name actually disappeared.
+    If a name reappears in the source, "removed" goes back to null.
     """
     if os.path.exists(previous_path):
         with open(previous_path, 'r', encoding='utf-8') as f:
@@ -106,7 +115,7 @@ def merge_with_previous(current, previous_path):
     else:
         previous = []
 
-    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    now_unix = int(datetime.datetime.now(datetime.timezone.utc).timestamp())
 
     current_by_key = {(r["month"], r["day"], r["name"]): r for r in current}
     previous_by_key = {(r["month"], r["day"], r["name"]): r for r in previous}
@@ -125,13 +134,13 @@ def merge_with_previous(current, previous_path):
             })
         else:
             r = previous_by_key[key]
-            prev_removed = r.get("removed")
+            prev_removed = _to_unix_seconds(r.get("removed"))
             merged.append({
                 "month": month,
                 "day": day,
                 "name": name,
                 "is_additional_calendar_name": r["is_additional_calendar_name"],
-                "removed": prev_removed if prev_removed is not None else now_iso,
+                "removed": prev_removed if prev_removed is not None else now_unix,
             })
 
     merged.sort(key=lambda r: (r["month"], r["day"], r["is_additional_calendar_name"], r["name"]))

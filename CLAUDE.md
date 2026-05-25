@@ -25,7 +25,7 @@ The script transforms two comma-delimited CSVs from [Valsts valodas centrs](http
 Output schema (one row per name, not per date):
 
 ```
-{ "month": Int, "day": Int, "name": String, "is_additional_calendar_name": Bool, "removed": String|null }
+{ "month": Int, "day": Int, "name": String, "is_additional_calendar_name": Bool, "removed": Int|null }
 ```
 
 ### `removed` semantics
@@ -33,8 +33,10 @@ Output schema (one row per name, not per date):
 `removed` records when a name disappears from the source files so callers can distinguish "name no longer in the calendar" from "name was never there." Rules, applied per `(month, day, name)`:
 
 - Name in the current source → `removed: null`. If a previous run had it marked removed, the field is cleared on the next run.
-- Name in the previous output but missing from the current source → `removed` set to the current UTC timestamp (`datetime.now(timezone.utc).isoformat()`).
+- Name in the previous output but missing from the current source → `removed` set to the current Unix timestamp (integer seconds since 1970-01-01 UTC). This format is what Swift's `Date(timeIntervalSince1970:)` consumes directly.
 - Name already had a `removed` timestamp and is still missing → the original timestamp is preserved (do not refresh on every run). This is what makes the field meaningful as "when last seen."
+
+`_to_unix_seconds` normalizes any pre-existing ISO 8601 string in `removed` to an int on read, so an output file from an older run self-heals to integer Unix seconds on the next run.
 
 The identity key is `(month, day, name)` — independent of `is_additional_calendar_name`. The flag stored on a removed entry is the last-known value from the source.
 
