@@ -1,8 +1,21 @@
 import csv
 import datetime
 import json
+import re
 import sys
 import os
+
+# Matches Latgalian dialect annotations like "(LTG: Buorbala)" and captures
+# the bare dialect name inside.
+LTG_ANNOTATION_RE = re.compile(r'\(LTG:\s*([^)]*?)\s*\)')
+
+def strip_ltg_annotations(names):
+    """Replace Latgalian dialect annotations like "Borbala (LTG: Buorbala)"
+    with just the bare dialect name ("Borbala Buorbala"). This keeps both the
+    standard and dialect forms as separate names once the string is
+    whitespace-split, instead of shredding the parenthetical into "(LTG:" and
+    "Buorbala)" junk fragments."""
+    return LTG_ANNOTATION_RE.sub(r'\1', names)
 
 def clean_names(name_list):
     """Remove periods and extra whitespaces from names but keep em dashes."""
@@ -36,6 +49,10 @@ def parse_csv(file_path):
             except ValueError:
                 print(f"Skipping row due to invalid date format: {row}")
                 continue  # Skip rows with invalid date format
+
+            # Normalize Latgalian dialect annotations before splitting so
+            # "(LTG: Buorbala)" yields a clean "Buorbala" name.
+            names = strip_ltg_annotations(names)
 
             # Special case for May 22
             if day == 22 and month == 5:
